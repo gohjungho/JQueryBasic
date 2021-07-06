@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    <!-- 1. 선택자 : HTML 요소를 선택하여 설정 
+        CSS는 정적 스타일을 적용하는 반면 JQuery는 동적으로 스타일 적용  -->
+        <!-- <h1>선호하는 음식</h1>
+        <section id = "food_1">
+            <h2>한식</h2>
+            <ul>
+                <li>김치</li>
+                <li>불고기</li>
+            </ul>
+        </section>
+        <section id = "food_2">
+            <h2>양식</h2>
+            <ul>
+                <li>피자</li>
+                <li>파스타</li>
+            </ul>
+        </section> -->
+
+
+    <!-- 특정 아이디값을 찾아서 적용 (#)
+        <h1 id="title">제 목</h1>
+
+        <script>$(function(){ 
+            $("#title").css("color", "red");
+        });
+        </script> -->
+
+
+    <!-- 전체 요소에 모두 적용 (*)
+        <h1>제이쿼리</h1>
+        <h2>선택자</h2>
+        <h3>직접 선택자</h3>
+
+        <script>
+            $(function(){
+                $("*").css("color", "red");
+            });
+        </script> -->
+
+
+    <!-- 특정 클래스 값을 찾아서 적용 (.)
+        <h1>제이쿼리</h1>
+        <h2 class="tit">선택자</h2>
+        <h3>직접 선택자</h3>
+        <h4 class="tit">간접 선택자</h4>
+
+        <script>
+            $(function(){
+                $(".tit").css("color", "red");
+            });
+        </script> -->
+
+
+    <!-- 특정 요소명을 찾아서 적용 (선택자)
+        <h1>제이쿼리</h1>
+        <h2>선택자</h2>
+        <h3>직접 선택자</h3>
+        <h2>간접 선택자</h2>
+
+        <script>
+            $(function(){
+                $("h2").css("color", "red");
+            });
+        </script>
+         -->
+
+        
+    <!-- 여러 요소명을 찾아서 적용 (선택자1, 선택자2, ...)
+        <h1>제이쿼리</h1>
+        <h2>선택자</h2>
+        <h3>직접 선택자</h3>
+        <h2>간접 선택자</h2>
+
+        <script>
+            $(function(){
+                $("h1, h3").css("color", "red");
+            });
+        </script>
+         -->
+
+
+    <!-- 요소명의 종속 항목(클래스)을 찾아서 적용 (선택자.클래스명)
+        <h1 class="tit">제이쿼리</h1>
+        <h2>선택자</h2>
+        <h3 class="tit">직접 선택자</h3>
+        <h2>간접 선택자</h2>
+
+        <script>
+            $(function(){
+                $("h1.tit").css("color", "red");
+            });
+        </script>
+         -->
+
+
+    <!-- 특정 요소명을 찾아서 적용 2 -->
+        <!-- <div id="wrap"></div>
+            <h1>제목1</h1>
+            <h2>제목2</h2>
+            <div id="inner_wrap">
+                <p>내용1</p>
+                <p>내용2</p>
+                <p>내용3</p>
+            </div>
+        </div> -->
+
+        <!-- 특정 요소의 부모 요소 선택 (.parent()) -->
+        <!-- <script>
+            $(function(){
+                $("h2").parent().css("color", "red");
+            });
+        </script> -->
+
+        <!-- 특정 요소의 다음 항목 선택 (.next()) -->
+        <!-- <script>
+            $(function(){
+                $("h2").next().css("color", "red");
+            });
+        </script> -->
+
+        <!-- 특정 요소의 하위(자식) 요소 선택 (.children()) -->
+        <!-- <script>
+            $(function(){
+                $("#inner_wrap").children().css("color", "red");
+            });
+        </script> -->
+
+        <!-- 특정 요소의 이전 항목 선택 (.prev()) -->
+        <!-- <script>
+            $(function(){
+                $("h2").prev().css("color", "red");
+            });
+        </script> -->
+
+        <!-- 특정 요소의 다음 항목들 전체 선택 (.nextAll()) -->
+
+        <!-- 특정 요소의 이전 항목들 전체 선택 (.prevAll()) -->
+
+        <!-- 특정 요소의 형제 요소들 전체 선택 (.siblings()) -->
+
+
+    <!-- 탐색 선택자 : 더욱 세밀하고 정확하게 선택 (위치, 속성) -->
+        <!-- first / last 선택자 -->
+        <!-- <h1>선호하는 음식</h1>
+        <h2>한식</h2>
+        <ul id="menu">
+            <li>짜장면</li>
+            <li>불고기</li>
+            <li>순두부</li>
+            <li>비빔밥</li>
+        </ul>
+
+        <script>
+            $(function(){
+                $("#menu li:first").css("color", "red");
+                $("#menu li:last").css("color", "blue");
+            });
+        </script> -->
+
+        <!-- even / odd 선택자 -->
+        <!-- <h1>선호하는 음식</h1>
+        <h2>한식</h2>
+        <ul id="menu">
+            <li>짜장면</li>
+            <li>불고기</li>
+            <li>순두부</li>
+            <li>비빔밥</li>
+        </ul>
+
+        <script>
+            $(function(){
+                $("#menu li:even").css("color", "red");
+                $("#menu li:odd").css("color", "blue");
+            });
+        </script> -->
+
+        <!-- eq(같은) / lt(적은) / gt(큰) 선택자 -->
+        <h1>선호하는 음식</h1>
+        <h2>한식</h2>
+        <ul id="menu">
+            <li>짜장면</li>
+            <li>불고기</li>
+            <li>순두부</li>
+            <li>비빔밥</li>
+        </ul>
+
+        <script>
+            $(function(){
+                // $("#menu li").eq(2).css("color", "red");
+                // $("#menu li:lt(2)").css("color", "red");
+                $("#menu li:gt(2)").css("color", "red");
+            });
+        </script>
+    </body>
+</html>

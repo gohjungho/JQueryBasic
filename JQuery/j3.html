@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+    <!-- 이벤트 : 방문자의 모든 움직임에 따라 코드를 실행 -->
+    
+    <!-- 이벤트 발생 시 -->
+        <!-- <p>
+            <button class="btn1">버튼1</button>
+        </p>
+        <p>내용1</p>
+
+        <p>
+            <button class="btn2">버튼2</button>
+        </p>
+        <p>내용2</p>
+
+        <script>
+            $(function() {
+                $(".btn1").click(function() { // 클릭이 이루어지면 
+                    $(".btn1").parent().next().css({ // 상위값의 다음 요소, 즉 내용1이 위치한 p태그의 
+                        "color":"red" // 색을 바꿈
+                    });
+                });
+
+                $(".btn2").on({ // 버튼위에 마우스 커서가 위치할 때 
+                    "mouseover focus": function() { // 올려져 있으면 
+                        $(".btn2").parent().next().css({
+                            "color": "blue" // 파란색으로 
+                        });
+                    },
+                    "mouseout blur": function() { // 떨어지면 
+                        $(".btn2").parent().next().css({
+                           "color": "black" // 원래대로(검정색으로)
+                        });
+                    }
+                });
+            });
+        </script> -->
+
+
+    <!-- 이벤트 강제 발생 시 -->
+        <!-- <p>
+            <button class="btn1">버튼1</button>
+        </p>
+        <p>내용1</p>
+
+        <p>
+            <button class="btn2">버튼2</button>
+        </p>
+        <p>내용2</p>
+
+        <script>
+            $(function() {
+                $(".btn1").click(function() { // 클릭이 이루어지면 
+                    $(".btn1").parent().next().css({ // 상위값의 다음 요소, 즉 내용1이 위치한 p태그의 
+                        "color":"red" // 색을 바꿈
+                    });
+                });
+
+                $(".btn2").on({ // 버튼위에 마우스 커서가 위치할 때 
+                    "mouseover focus": function() { // 올려져 있으면 
+                        $(".btn2").parent().next().css({
+                            "color": "blue" // 파란색으로 
+                        });
+                    }
+                });
+
+                // 이벤트 강제 발생 
+                // $(".btn1").click(); 
+                // $(".btn2").trigger("mouseover");
+
+                // 이벤트 제거 
+                // $(".btn1").off("click"); 
+                // $(".btn2").off("mouseover focus");
+            });
+        </script> -->
+
+
+    <!-- ready() / load() : HTML 문서 로딩이 끝나고 이벤트 발생 -->
+        <!-- ready()는 사용자가 사이트를 방문해서 
+            HTML문서 객체의 로딩이 끝나면 이벤트 강제 발생
+        load()는 img, video 등의 로딩이 끝나면 이벤트 강제 발생 -->
+
+        <!-- <p>
+            <img src="Taco.png" class="img1">
+        </p>
+
+        <script>
+            $(function() {
+                $(document).ready(function() {
+                    var h1 = $(".img1").height();
+                    console.log("ready: ", h1);
+                });
+                $(window).load(function() {
+                    var h2 = $(".img1").height();
+                    console.log("load: ", h2);
+                });
+                //$.load('test.html', {bdn: 'js'}, function() { ... })
+            });
+        </script> -->
+
+
+    <!-- 버튼 2 -->
+
+        <!-- <p>
+            <button class="btn1">버튼1</button>
+        </p>
+        <p class="txt1">내용1</p>
+
+        <p>
+            <button class="btn2">버튼2</button>
+        </p>
+        <p class="txt2">내용2</p>
+
+        <p>
+            <button class="btn3">버튼3</button>
+        </p>
+        <p class="txt3">내용3</p>
+
+        <script>
+            $(function() {
+                $(".btn1").on("click", function(e) {
+                    e.preventDefault();
+                    $(".txt1").css({"background-color":"#ff0"});
+                })
+                $(".btn2").on("click", function(e) {
+                    $(".txt2").css({"background-color":"#0ff"});
+                })
+                $(".btn3").on("dblclick", function(e) { // 더블클릭
+                    $(".txt3").css({"background-color":"#0f0"});
+                })
+            })
+        </script> -->
+
+
+    <!-- 마우스 이동 때 이벤트 2 -->
+
+        <!-- <p> X: <span class="posX">0</span></p>
+        <p> Y: <span class="posY">0</span></p>
+
+        <script>
+            $(function() {
+                $(document).on("mousemove", function(e) { 
+                // 마우스 커서의 움직임에 따라 좌표값을 표시해 줌 
+                    $(".posX").text(e.pageX);
+                    $(".posY").text(e.pageY);
+                })
+            })
+        </script> -->
+
+
+    <!-- 입력창 이벤트 -->
+
+        <form action="#">
+            <p>
+                <label for="userid">ID</label>
+                <input type="text" name="userid" id="userid">
+            </p>
+            <p>
+                <label for="userpw">PW</label>
+                <input type="password" name="userpw" id="userpw">
+            </p>
+
+            <script>
+                $(function() {
+                    $("#userid, #userpw").on("focus", function() { // 입력창을 누르면
+                        $(this).css({ // 아래 css를 적용 
+                            "background-color":"pink"
+                        })
+                    })
+                    $("#userid, #userpw").on("blur", function() { // 입력창에서 떠나면
+                        $(this).css({ // 아래 css를 적용 
+                            "background-color":"white"
+                        })
+                    })
+                })
+            </script>
+        </form>
+    </body>
+</html>

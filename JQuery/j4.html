@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+    <!-- 키보드 입력 시 이벤트 -->
+        <!-- <p>
+            <input type="text" name="userid" id="userid">
+        </p>
+        
+        <script>
+            $(function() {
+                $(document).on("keydown", keyEventFnc); // 키가 눌렸을 때
+                function keyEventFnc(e) {
+                    var direct = ""; // 눌린 키가 무엇인지 판별할 변수
+
+                    switch(e.keyCode) {
+                        case 37: // 뒤 숫자는 ASCII 코드 
+                            direct = "LEFT"
+                        break;
+                        case 38:
+                            direct = "TOP"
+                        break;
+                        case 39:
+                            direct = "RIGHT"
+                        break;
+                        case 40:
+                            direct = "BOTTOM"
+                        break;
+                        // ex) 게임의 방향키 지정 
+                        case 65:
+                            direct = "A"
+                        break;
+                        case 68:
+                            direct = "D"
+                        break;
+                        case 87:
+                            direct = "W"
+                        break;
+                        case 83:
+                            direct = "S"
+                        break;
+                    }
+                    if (direct) $("#userid").val(direct);
+                }
+            })
+        </script> -->
+
+
+    <!-- 그룹 이벤트 등록 / 삭제 -->
+        
+        <!-- on() 메서드 -->
+
+            <!-- <div id = "wrap">
+                <p><button class="btn1">버튼1</button></p>
+                <p><button class="btn2">버튼2</button></p>
+            </div>
+
+            <script>
+                $(function() {
+                    $(".btn1.on").on("mouseover focus", function() {
+                        alert("HELLO!"); // 동작을 안함... 
+                    });
+                    $(".btn1").addClass("on");
+
+                    $(document).on("mouseover focus", ".btn2.on", function() {
+                        alert("WELCOME!"); // 버튼에 커서만 올려도 팝업이 뜸
+                    });
+                    $(".btn2").addClass("on");
+                });
+            </script> -->
+
+
+        <!-- off() 메서드 -->
+
+            <!-- <div id = "wrap">
+                <p><button class="btn1">버튼1</button></p>
+            </div>
+            <p><button class="del1">버튼1 이벤트 해제</button></p>
+            
+
+            <script>
+                $(function() {
+                    $(".btn1").on("mouseover", function() {
+                        alert("HELLO!"); // 커서만 올려도 팝업이 뜸 
+                    });
+
+                    $(".del1").on("click", function() {
+                        $(".btn1").off("mouseover");
+                    }); // 해제를 누르면 위 버튼1에 커서를 올려도 동작하지 않음
+                });
+            </script> -->
+
+
+        <!-- 그룹 이벤트 -->
+
+            <div id = "wrap">
+                <p><button class="btn1">버튼1</button></p>
+            </div>
+            <p><button class="del1">버튼1 이벤트 해제</button></p>
+            <p><button class="del2">버튼2 이벤트 해제</button></p>
+            
+
+            <script>
+                $(function() {
+                    $(".btn1").on("mouseover", function() {
+                        alert("HELLO!");  
+                    });
+                    $(document).on("mouseover", ".btn2", function() {
+                        alert("WELCOME!"); // 커서를 올리면 팝업을 띄움
+                    })
+                    var btn2 = $("<p><button class=\"btn2\">버튼2</button></p>");
+                    $("#wrap").append(btn2); // 없던 btn2 추가 
+
+                    $(".del1").on("click", function() {
+                        $(".btn1").off("mouseover");
+                    }); // 해제를 누르면 위 버튼1에 커서를 올려도 동작하지 않음
+                    
+                    $(".del2").on("click", function() {
+                        $(document).off("mouseover", ".btn2");
+                    }); // 새로 만든 btn2도 해제하는 버튼 활성화 
+                });
+            </script>
+    </body>
+</html>

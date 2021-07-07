@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- zoom in / out -->
+        <p class="zoomBtnZone">
+            <button class="zoomOut">-</button>
+            <button class="origin">100%</button>
+            <button class="zoomIn">+</button>
+        </p>
+        <p>
+            <p class="fontSize">14px</p>
+            <div id="wrap">
+                델타 변이는 지금까지 발견된 변이 바이러스 중 전파 속도가 가장 빠른 것으로 전해졌다. 아시시 자 미국 브라운대 공중보건대학원 학장은 "지금껏 봐온 변이 중 가장 전염성이 강하다"고 평가했다. 실제로 WHO의 분석에 따르면 델타 변이의 감염재생산지수는 알파 변이 대비 55% 높다. 영국 공중보건국도 지난달 말 델타 변이의 2차 발병률이 10.7%로, 알파 변이(7.9%)보다 높다고 발표했다.
+
+                국내에서는 전북 남원의 한 식당에서 확진자와 5m 정도 떨어진 자리에 10여분 앉았던 사람이 델타 변이에 감염되는 사례도 발생했다. 방역당국은 밀폐된 식당 안에서 에어컨 바람을 통해 바이러스가 퍼졌을 것으로 추정하고 있다.
+            </div>
+        </p>
+
+        <script>
+            $(function() {
+                var baseFontSize = 14;
+                // 빨강, 검정 버튼 추가 
+                var btn1 = $("<button class=\"btn1\">빨강</button>");
+                    $(".zoomBtnZone").append(btn1);
+                var btn2 = $("<button class=\"btn2\">검정</button>");
+                    $(".zoomBtnZone").append(btn2);
+
+                $(".zoomBtnZone button").on("click", zoomInOut);
+
+                function zoomInOut() {
+                    if($(this).hasClass("zoomOut")) { // this에는 zoomIn / zoomOut이 들어감
+                        if(baseFontSize <= 8) return false;
+                        baseFontSize--;
+                    } else if ($(this).hasClass("zoomIn")) {
+                        if(baseFontSize >= 20) return false;
+                        baseFontSize++;
+                    } else if ($(this).hasClass("btn1")) {
+                        $("*").parent().next().css({
+                            "color": "red"  
+                        });
+                    } else if ($(this).hasClass("btn2")) {
+                        $("*").parent().next().css({
+                            "color": "black" 
+                        });
+                    } else {
+                        baseFontSize = 14;
+                    };
+                    $(".fontSize").text(baseFontSize + "px")
+                    $("body").css({fontSize: baseFontSize + "px"})
+                };
+            });
+        </script>
+    </body>
+</html>
